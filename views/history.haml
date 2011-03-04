@@ -1,0 +1,55 @@
+- content_for :title do
+  THE HISTORY OF AVIATION
+- content_for :head do
+  %script{ :type => 'text/javascript', :src => '/js/mediaplayer/jwplayer.js' }
+%h2 Wright Brothers
+.section#section-1
+  .media.slideshow
+    %img{ :src => '/images/history/flyer.jpg', :height => 320, :width => 600 }
+    %img{ :src => '/images/history/glider.jpg', :height => 320, :width => 600 }
+    %img{ :src => '/images/history/flight.jpg', :height => 320, :width => 600 }
+  %p
+    The history of aviation in modern times begins with the Wright Brothers, 
+    who at the start of the 1900s began experimenting with kite and glider designs
+    before moving onto powered aircraft.
+  %p
+    Through their experiments they developed an understanding of the aerodynamic forces
+    which they had to use in order to sustain flight, building their own wind tunnel in
+    the process to test their prototypes.
+  %p
+    With their reasearch they developed an early version of the modern day aircraft controls,
+    allowing their design to turn and change altitude and speed.
+  %p
+    Their first powered plane, the Wright Flyer, was a canvas covered, wooden framed construction.
+    It was powered by a custom built petrol engine and used propellers the brothers had designed themselves.
+    When completed it weighted 274kg and had a wingspan of just 40ft.
+  %p
+    The first flight in this machine was only 120ft and at a height of just 10ft, but in the
+    coming years went on the refine their design, making increasely longer flights with each
+    advance and improving their aircraft's performance all the time.
+  %a.section-end{ :href => '#top-anchor' } Top
+  .clear
+%h2 Early Attempts
+.section#section-2
+  .media
+    #media-failures
+  :javascript
+    jwplayer('media-failures').setup({
+      'flashplayer': '/js/mediaplayer/player.swf',
+      'id': 'media-failures',
+      'width': '600',
+      'height': '440',
+      'file': '/videos/failures.m4v',
+      'image': '/videos/failures.png'
+    });
+  %p
+    Many earlier attempts to construct a "flying machine" produced contraptions almost unrecognisable as
+    aircraft, many of which had little success, as shown in the video on the right!
+  %a.section-end{ :href => '#top-anchor' } Top
+  .clear
+%h2 More Information
+.section#section-3
+  %p
+    %a{ :href => 'http://en.wikipedia.org/wiki/Wright_brothers' } Wright Brothers
+    %br
+    %a{ :href => 'http://en.wikipedia.org/wiki/Wright_Flyer' } Wright Flyer

@@ -1,0 +1,272 @@
+body
+  background-image: url('/images/bg.jpg')
+  background-position: fixed
+  font-family: 'Arial'
+
+#top-anchor
+  position: absolute
+  top: 0
+  left: 0
+
+.clear
+  clear: both
+
+#nav-side
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 200px
+
+  ol
+    width: 200px
+    padding: 80px 0 0
+    margin-top: -60px
+    background: url('/images/nav-side-top.png') no-repeat
+    font-weight: bold
+    font-size: 14px
+    color: #fff
+
+    li a
+      display: block
+      width: 102px
+      padding: 8px 9px 9px
+      margin: 5px 40px
+      text-align: center
+      text-decoration: none
+      text-shadow: 1px 1px 1px #000
+      color: #fff
+
+    li a:hover
+      text-decoration: underline
+
+    li.selected a
+      background: url('/images/nav-side-item.png')
+
+#nav-top
+  margin: 36px 0 18px
+  ol
+    float: left
+  li
+    float: left
+    margin: 0 20px
+    a
+      text-shadow: 1px 1px 1px #FFF
+      padding: 9px 0 17px
+      font-weight: bold
+      font-size: 14px
+      display: block
+      color: #434343
+      text-align: center
+      text-decoration: none
+      width: 102px
+      &:hover
+        text-decoration: underline
+  li.selected
+    a
+      text-shadow: none
+      color: #fff
+      background: url('/images/nav-top-item.png') no-repeat
+
+#nav-search
+  float: right
+  width: 225px
+  height: 30px
+  margin: 0 10px 0 0
+  background: url('/images/nav-search-bg.png')
+
+  input
+    background: transparent
+    border: 0
+    color: #8cb4dc
+    font-size: 14px
+    padding: 3px 5px
+    font-weight: bold
+    margin: 4px 10px
+    width: 195px
+
+#body
+  margin: 0 20px 0 220px
+
+a#bookmark
+  display: block
+  width: 114px
+  height: 30px
+  float: right
+  margin: 5px -5px 0 0
+  background: url('/images/bookmark.png')
+
+a#logo
+  display: block
+  clear: both
+  width: 120px
+  height: 120px
+  margin: 40px
+  background: url('/images/logo.png')
+
+h1#title
+  padding: 30px 10px 29px
+  margin: 0 20px
+  border-bottom: 1px solid #ccc
+  height: 40px
+  font-family: 'Myriad Pro'
+  font-size: 40px
+  font-weight: bold
+
+#content-wrapper
+  margin: 30px 0 0
+  width: 100%
+  td
+    vertical-align: top
+  .tl, .tr, .bl, .br
+    width: 10px
+    height: 100px
+    background-repeat: no-repeat
+  .tr
+    background-image: url('/images/content-tr.png')
+  .tl
+    background-image: url('/images/content-tl.png')
+  .br
+    background-image: url('/images/content-br.png')
+  .bl
+    background-image: url('/images/content-bl.png')
+  .tm, .bm
+    background: url('/images/content-tb.png') repeat-x
+  .bm
+    background-position: 0 -100px
+  .ml, .mr
+    background: url('/images/content-lr.png') repeat-y
+  .mr
+    background-position: -10px 0
+
+#content, #footer
+  padding: 0 20px
+  color: #0b2e52
+  a
+    color: #165fa8
+    text-decoration: underline
+  a:hover
+    color: #379bff
+
+#footer
+  padding: 20px 40px
+
+#content
+  background: url('/images/content-bg.png')
+
+  h2
+    font-size: 24px
+    font-weight: bold
+    padding: 10px 20px
+    border-bottom: 1px solid #ccc
+
+  .section
+    margin: 0
+    padding: 20px
+    border-bottom: 1px solid #ccc
+    .media
+      float: right
+      width: 600px
+      border: 10px solid #fff
+      margin: 0 0 20px 20px
+    p
+      line-height: 130%
+      margin: 10px 0
+
+a.section-end, #top-link
+  font-size: 75%
+  font-weight: bold
+
+#gallery
+  margin: 0 auto
+  li
+    float: left
+    background: url('/images/gallery-item.png')
+    padding: 15px
+    img
+      width: 240px
+      height: 180px
+
+form
+  ol
+    li
+      padding: 15px 0
+      span.label
+        display: block
+        font-weight: bold
+        text-shadow: 1px 1px 1px #fff
+        float: left
+        width: 200px
+        margin: 0 20px 0 0
+      input, textarea
+        font-family: 'Arial'
+        font-size: 12px
+        color: #555
+        width: 600px
+        padding: 10px
+        border: 1px solid
+        border-color: #ccc #ccc #e0e0e0 #e0e0e0
+        &:hover
+          border-color: #999 #999 #ccc #ccc
+        &:focus
+          border-color: #3d7bad #3d7bad #528cbf #528cbf
+      textarea
+        height: 144px
+  a.submit
+    display: block
+    background: #fff
+    padding: 10px
+    margin: 0 0 0 220px
+    width: 600px
+    border: 1px solid #e0e0e0
+    text-decoration: none !important
+    font-weight: bold
+    text-align: center
+    &:hover
+      border-color: #ccc
+
+.question
+  position: relative
+  h3
+    float: left
+    padding: 11px 0
+    font-weight: bold
+    font-size: 16px
+
+.answers
+  display: block
+  float: right
+  li
+    margin: 0 0 0 10px
+    float: left
+    a
+      display: block
+      width: 120px
+      cursor: pointer
+      background: #fff
+      padding: 10px
+      font-weight: bold
+      text-decoration: none !important
+      border: 1px solid #e0e0e0
+      &:hover
+        border-color: #ccc
+
+#heading-2
+  display: none
+
+.score
+  text-align: center
+  display: none
+  div
+    text-align: left
+    margin: 0px auto
+    background: #fff
+    width: 100px
+    padding: 10px
+    span
+      display: block
+      padding: 10px
+      font-size: 40px
+      font-weight: bold
+      text-align: center
+  .total
+    border-bottom: 1px solid #ccc

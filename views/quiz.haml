@@ -1,0 +1,37 @@
+- content_for :head do
+  %script{ :type => 'text/javascript', :src => '/js/quiz.js' }
+- content_for :title do
+  QUIZ
+%h2#heading-1 Are you a paper plane pilot or top gun?
+%h2#heading-2 You scored...
+.section.question
+  %h3 01. What was the name of the Wright Brothers' first manned plane?
+  %ol.answers
+    %li
+      %a Bird
+    %li
+      %a Skybird
+    %li.correct
+      %a Flyer
+    %li
+      %a Flying Machine
+    .clear
+  .clear
+.section.question
+  %h3 02. How long did their first flight last?
+  %ol.answers
+    %li
+      %a 12 seconds
+    %li.correct
+      %a 59 seconds
+    %li
+      %a 1 minute
+    %li
+      %a 27 seconds
+    .clear
+  .clear
+.section.score
+  %div
+    %span.total 0
+    %span 20
+.clear

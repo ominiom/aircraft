@@ -1,0 +1,23 @@
+- content_for :title do
+  GALLERY
+- content_for :head do
+  %script{ :type => 'text/javascript', :src => '/js/fancybox/jquery.mousewheel-3.0.4.pack.js' }
+  %script{ :type => 'text/javascript', :src => '/js/fancybox/jquery.fancybox-1.3.4.pack.js' }
+  %link{ :rel => 'stylesheet', :type => 'text/css', :href => 'js/fancybox/jquery.fancybox-1.3.4.css' }
+  %script
+    :plain
+      $(document).ready(function() {
+        $('#gallery a').fancybox({
+          opacity: true,
+          overlayShow: false,
+          transitionIn: 'elastic',
+          transitionOut: 'elastic',
+          titlePosition: 'over'
+        });
+      });
+%ol#gallery
+  - (1..10).each do |n|
+    %li
+      %a{ :href => "/gallery/#{n}.jpg" }
+        %img{ :src => "/gallery/#{n}_t.jpg" }
+.clear

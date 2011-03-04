@@ -1,0 +1,56 @@
+!!! strict
+%html
+  %head
+    %title= yield_content :title
+    %link{ :rel => 'stylesheet', :href => 'stylesheets/reset.css' }
+    %link{ :rel => 'stylesheet', :href => 'stylesheets/layout.css' }
+    %script{ :type => 'text/javascript', :src => '/fonts/cufon-yui.js' }
+    %script{ :type => 'text/javascript', :src => '/fonts/myriad-pro.font.js' }
+    %script{ :type => 'text/javascript', :src => '/js/jquery-1.4.3.min.js' }
+    %script{ :type => 'text/javascript', :src => '/js/jquery.cycle.all.latest.js' }
+    %script
+      :plain
+        Cufon.replace('h1')
+
+        $(document).ready(function() {
+          $('#nav-search input').focus(function() {
+            if( $(this).val() == 'SEARCH' ) $(this).val('')
+          })
+          
+          $('#nav-search input').blur(function() {
+            if( $(this).val() == '' ) $(this).val('SEARCH')
+          })
+
+          $('.slideshow').cycle({ fx: 'fade' })
+        });
+    = yield_content :head
+  %body
+    #top-anchor
+    #page
+      #nav-side
+        %a#bookmark{ :href => 'javascript:(function(){var title = "Aircraft Site";var url = "http://www.aircraft.com/";if(window.sidebar) window.sidebar.addPanel(title, url,"");else if(window.external) window.external.AddFavorite(url, title);})();' }
+        %a#logo
+        %ol= navigation('Home' => '/', 'History' => '/history', 'Explanation' => '/explanation', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
+      #body
+        #nav-top
+          %ol= navigation('Home' => '/', 'History' => '/history', 'Explanation' => '/explanation', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
+        #nav-search
+          %input{ :type => 'text', :value => 'SEARCH' }
+        .clear
+        %table#content-wrapper
+          %tr
+            %td.tl
+            %td.tm
+              %h1#title= yield_content :title
+            %td.tr
+          %tr
+            %td.ml
+            %td
+              #content= yield
+            %td.mr
+          %tr
+            %td.bl
+            %td.bm
+              #footer
+                %a#top-link{ :href => '#top-anchor' } Top
+            %td.br
