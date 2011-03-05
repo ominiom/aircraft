@@ -1,5 +1,5 @@
 - content_for :title do
-  GALLERY
+  Gallery
 - content_for :head do
   %script{ :type => 'text/javascript', :src => '/js/fancybox/jquery.mousewheel-3.0.4.pack.js' }
   %script{ :type => 'text/javascript', :src => '/js/fancybox/jquery.fancybox-1.3.4.pack.js' }
@@ -7,7 +7,7 @@
   %script
     :plain
       $(document).ready(function() {
-        $('#gallery a').fancybox({
+        $('.gallery a').fancybox({
           opacity: true,
           overlayShow: false,
           transitionIn: 'elastic',
@@ -15,9 +15,18 @@
           titlePosition: 'over'
         });
       });
-%ol#gallery
-  - (1..10).each do |n|
-    %li
-      %a{ :href => "/gallery/#{n}.jpg" }
-        %img{ :src => "/gallery/#{n}_t.jpg" }
+- Pow('./public/gallery').directories.each do |gallery|
+  - if Pow("./public/gallery/#{gallery.name}.txt").exists?
+    %h2= Pow("./public/gallery/#{gallery.name}.txt").read.split("\n").first
+  .section{ :id => "gallery-#{gallery.name}" }
+    - if Pow("./public/gallery/#{gallery.name}.txt").exists?
+      %p= Pow("./public/gallery/#{gallery.name}.txt").read.split("\n").last
+    %ol.gallery
+      - gallery.glob('*_t.jpg').each do |thumb|
+        %li
+          %a{ :href => "/gallery/#{gallery.name}/#{thumb.name.gsub('_t', '')}", :title => (Pow("./public/gallery/#{gallery.name}/#{thumb.name.gsub('_t.jpg', '.txt')}").read rescue '') }
+            %img{ :src => "/gallery/#{gallery.name}/#{thumb.name}" }
+      .clear
+    %a.section-end{ :href => '#top-anchor' } Top
+    .clear
 .clear

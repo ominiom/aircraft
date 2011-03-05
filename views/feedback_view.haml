@@ -1,0 +1,7 @@
+- content_for :title do
+  Feedback
+%h2 Viewing all feedback
+- @feedback.each do |feedback|
+  .section
+    %p= "From: #{feedback.email || 'Unknown'}"
+    %p= feedback.message

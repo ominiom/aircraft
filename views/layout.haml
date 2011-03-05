@@ -1,9 +1,9 @@
 !!! strict
 %html
   %head
-    %title= yield_content :title
-    %link{ :rel => 'stylesheet', :href => 'stylesheets/reset.css' }
-    %link{ :rel => 'stylesheet', :href => 'stylesheets/layout.css' }
+    %title= "Aircraft - #{yield_content :title}"
+    %link{ :rel => 'stylesheet', :href => '/stylesheets/reset.css' }
+    %link{ :rel => 'stylesheet', :href => '/stylesheets/layout.css' }
     %script{ :type => 'text/javascript', :src => '/fonts/cufon-yui.js' }
     %script{ :type => 'text/javascript', :src => '/fonts/myriad-pro.font.js' }
     %script{ :type => 'text/javascript', :src => '/js/jquery-1.4.3.min.js' }
@@ -21,6 +21,10 @@
             if( $(this).val() == '' ) $(this).val('SEARCH')
           })
 
+          $('form a.submit').click(function() {
+            $(this).parents('form').submit()
+          })
+
           $('.slideshow').cycle({ fx: 'fade' })
         });
     = yield_content :head
@@ -28,12 +32,13 @@
     #top-anchor
     #page
       #nav-side
-        %a#bookmark{ :href => 'javascript:(function(){var title = "Aircraft Site";var url = "http://www.aircraft.com/";if(window.sidebar) window.sidebar.addPanel(title, url,"");else if(window.external) window.external.AddFavorite(url, title);})();' }
+        %a#bookmark{ :href => 'javascript:(function(){var title = document.title;var url = window.location;if(window.sidebar) window.sidebar.addPanel(title, url,"");else if(window.external) window.external.AddFavorite(url, title);})();' }
         %a#logo
-        %ol= navigation('Home' => '/', 'History' => '/history', 'Explanation' => '/explanation', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
+        %ol= navigation('Home' => '/', 'Airplanes' => '/airplanes', 'Helicopters' => '/helicopters', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
+        #hit-counter= hit_counter
       #body
         #nav-top
-          %ol= navigation('Home' => '/', 'History' => '/history', 'Explanation' => '/explanation', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
+          %ol= navigation('Home' => '/', 'Airplanes' => '/airplanes', 'Helicopters' => '/helicopters', 'Gallery' => '/gallery', 'Quiz' => '/quiz', 'Feedback' => '/feedback')
         #nav-search
           %input{ :type => 'text', :value => 'SEARCH' }
         .clear
@@ -41,7 +46,7 @@
           %tr
             %td.tl
             %td.tm
-              %h1#title= yield_content :title
+              %h1#title= (yield_content :title).upcase
             %td.tr
           %tr
             %td.ml

@@ -1,7 +1,7 @@
 - content_for :head do
   %script{ :type => 'text/javascript', :src => '/js/quiz.js' }
 - content_for :title do
-  QUIZ
+  Quiz
 %h2#heading-1 Are you a paper plane pilot or top gun?
 %h2#heading-2 You scored...
 .section.question
@@ -28,6 +28,45 @@
       %a 1 minute
     %li
       %a 27 seconds
+    .clear
+  .clear
+.section.question
+  %h3 03. What type of aircraft do the Blue Angels display team use?
+  %ol.answers
+    %li
+      %a Typhoon
+    %li
+      %a Hawk
+    %li.correct
+      %a F-18
+    %li
+      %a F-16
+    .clear
+  .clear
+.section.question
+  %h3 04. What type of aircraft do the Red Arrows display team use?
+  %ol.answers
+    %li
+      %a F-18
+    %li.correct
+      %a Hawk
+    %li
+      %a F-16
+    %li
+      %a Typhoon
+    .clear
+  .clear
+.section.question
+  %h3 05. In what year was the first helicopter built?
+  %ol.answers
+    %li
+      %a 1932
+    %li
+      %a 1942
+    %li
+      %a 1937
+    %li.correct
+      %a 1936
     .clear
   .clear
 .section.score

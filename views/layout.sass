@@ -1,6 +1,6 @@
 body
   background-image: url('/images/bg.jpg')
-  background-position: fixed
+  background-attachment: fixed
   font-family: 'Arial'
 
 #top-anchor
@@ -12,7 +12,7 @@ body
   clear: both
 
 #nav-side
-  position: absolute
+  position: fixed
   top: 0px
   left: 0px
   width: 200px
@@ -113,7 +113,7 @@ h1#title
   font-weight: bold
 
 #content-wrapper
-  margin: 30px 0 0
+  margin: 30px 0
   width: 100%
   td
     vertical-align: top
@@ -176,8 +176,8 @@ a.section-end, #top-link
   font-size: 75%
   font-weight: bold
 
-#gallery
-  margin: 0 auto
+.gallery
+  margin: 0 -5px
   li
     float: left
     background: url('/images/gallery-item.png')
@@ -270,3 +270,34 @@ form
       text-align: center
   .total
     border-bottom: 1px solid #ccc
+
+#hit-counter
+  height: 34px
+  width: 106px
+  margin: 20px 47px 0
+  background: #4e4e4e
+  .digit
+    display: block
+    float: left
+    width: 20px
+    height: 32px
+    margin: 1px 0 1px 1px
+    background-image: url('/images/hit-counter-strip.png')
+  .digit-1
+    background-position: 0 -32px
+  .digit-2
+    background-position: 0 -64px
+  .digit-3
+    background-position: 0 -96px
+  .digit-4
+    background-position: 0 -128px
+  .digit-5
+    background-position: 0 -160px
+  .digit-6
+    background-position: 0 -192px
+  .digit-7
+    background-position: 0 -224px
+  .digit-8
+    background-position: 0 -256px
+  .digit-9
+    background-position: 0 -288px

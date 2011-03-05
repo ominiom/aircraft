@@ -1,16 +1,16 @@
 - content_for :title do
-  FEEDBACK
+  Feedback
 %h2 Send your suggestions and comments
 .section
-  %form
+  %form{ :action => '/feedback', :method => 'post' }
     %ol
       %li
         %span.label Email
-        %input{ :type => 'text' }
+        %input{ :type => 'text', :name => 'email' }
         .clear
       %li
         %span.label Message
-        %textarea
+        %textarea{ :name => 'message' }
         .clear
       %li
         %a.submit{ :href => '#' } Send
