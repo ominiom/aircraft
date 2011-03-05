@@ -64,6 +64,7 @@ helpers do
 end
 
 set :views, Proc.new { File.join(root, 'views') }
+set :environment, :development
 
 get '/' do
   count_hit
