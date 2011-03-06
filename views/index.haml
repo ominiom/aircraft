@@ -1,4 +1,44 @@
 - content_for :title do
-  AIRCRAFT
-%marquee
-  %img{ :src => '/images/banner.png' }
+  Home
+- content_for :head do
+  %script{ :type => 'text/javascript', :src => '/js/mediaplayer/jwplayer.js' }
+  :javascript
+    $(document).ready(setTimelineWidth);
+    $(window).resize(setTimelineWidth)
+
+    function setTimelineWidth() {
+      $('#timeline').width(0)
+      $('#timeline').width($('.section p').width())
+    }
+#banner
+  .cloud#cloud-1
+  .cloud#cloud-2
+  .cloud#cloud-3
+  %marquee
+    %img{ :src => '/images/banner.png' }
+%h2 Introduction
+.section
+  %p
+    Since the dawn of civilisation man has been fascinated with the magic and the mystery of flight.
+    If only he could fly he could escape the troubles and cares of the world and be as free as the bird.
+    If only he could fly he could be closer to the Gods he worshipped, the sun and the moon.
+    Nearly four thousand years spent impatiently, waiting for the right technology may seperate
+    Daedalus from the Wright brothers, but they had in common the same ancient yearning to
+    conquer the air.
+%h2 Timeline
+.section
+  #timeline
+    %img{ :src => '/images/timeline.png', :height => 125 }
+.section
+  .media{ :style => 'float: none; text-align: center; margin: 0 auto;' }
+    #media-intro
+  :javascript
+    jwplayer('media-intro').setup({
+      'flashplayer': '/js/mediaplayer/player.swf',
+      'id': 'media-intro',
+      'width': '600',
+      'height': '460',
+      'file': '/videos/intro.m4v',
+      'image': '/videos/intro.png'
+    });
+  .clear
