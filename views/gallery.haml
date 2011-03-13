@@ -27,6 +27,7 @@
           %a{ :href => "/gallery/#{gallery.name}/#{thumb.name.gsub('_t', '')}", :title => (Pow("./public/gallery/#{gallery.name}/#{thumb.name.gsub('_t.jpg', '.txt')}").read rescue '') }
             %img{ :src => "/gallery/#{gallery.name}/#{thumb.name}" }
       .clear
+    .clear
     %a.section-end{ :href => '#top-anchor' } Top
     .clear
 .clear

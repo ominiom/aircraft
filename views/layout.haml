@@ -44,10 +44,10 @@
         .clear
         %table#content-wrapper
           %tr
-            %td.tl
-            %td.tm
+            %td.tl(cellspacing=0)
+            %td.tm(cellspacing=0)
               %h1#title= (yield_content :title).upcase
-            %td.tr
+            %td.tr(cellspacing=0)
           %tr
             %td.ml
             %td
